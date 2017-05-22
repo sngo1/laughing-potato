@@ -6,3 +6,5 @@ DEVLOG
 INITIAL   DATE   DESCRIPTION
 ------------------------------------------------------------------------------
 S    5-18-17   Set up github repo; added devlog; added plan20160531 [shouldn't it be plan20170609?
+D    2012-05-19    Worked on project proposal doc
+S    2012-05-19    Worked on project proposal doc
