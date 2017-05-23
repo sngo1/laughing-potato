@@ -60,7 +60,6 @@ Add asteroids caught in orbit
 
 
 
-
     Which jobs are most crucial?
     Which components constitute core functionality (vs non-essential)?
     Which components are prerequisites for others?
