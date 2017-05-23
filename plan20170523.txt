@@ -5,33 +5,33 @@ Period 1
 Center of Your Universe
            We plan to create an augmentable solar system using a combination of compsci and physics in the backend and Processing in the front end. The user will start with a Sun that rotates on its own(maybe we’ll add a big bang at the beginning if we can figure it out). Then, they will be provided with three choices of what to include next, three of one of the following: asteroid, randomized planet, star. They can select one of those and will be given a speed and a direction associated with it. Using that information, they can click where they want to place it, and it will incorporate itself into the solar system, whether it moves in seamlessly or destroys a planet. A new object will appear in the box they selected before, so they’ll once again have three options total. As of now, they won’t be able to remove anything or deselect a choice from the selection boxes; they would have to restart the program.
 
-Back-End
-Classes
+ack-End Classes----------------------------------------------------------------
 Solar System
-boolean Gravity()
-boolean Add(Object)
-boolean Add() [computer automated random addition]
+      Gravity()
+      Add(Object)
+      Add() [computer automated random addition]
 Planet
-double Radius 
-double Speed
-double Mass
-boolean Orbit()
-boolean Crash()
+      double Radius 
+      double Speed
+      double Mass
+      boolean Orbit()
+      boolean Crash()
 Asteroid
-double Radius
-double EllipseX
-double EllipseY
-double Speed
-double Mass
-int Angle
-boolean Crash()
-boolean BurnUp()
-boolean GravitationalPull()
+      double Radius
+      double EllipseX
+      double EllipseY
+      double Speed
+      double Mass
+      int Angle
+      boolean Crash()
+      boolean BurnUp()
+      boolean GravitationalPull()
 Star - upper limit of 5 in system
-double Radius
-double Speed
-boolean Move()
-Setup
+      double Radius
+      double Speed
+      boolean Move()
+===============================================================================
+Setup---------------------------------------------------------------------------
 Gravitational center is the middle by default - star would go there unless it was a binary system
 If binary system, stars would orbit it
 Option to set mass, speed, etc of planets, stars, and asteroids, or take one from a queue
