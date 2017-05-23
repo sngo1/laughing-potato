@@ -1,0 +1,74 @@
+Team DSi
+Despoina Sparakis, Samantha Ngo
+Period 1
+
+Center of Your Universe
+           We plan to create an augmentable solar system using a combination of compsci and physics in the backend and Processing in the front end. The user will start with a Sun that rotates on its own(maybe we’ll add a big bang at the beginning if we can figure it out). Then, they will be provided with three choices of what to include next, three of one of the following: asteroid, randomized planet, star. They can select one of those and will be given a speed and a direction associated with it. Using that information, they can click where they want to place it, and it will incorporate itself into the solar system, whether it moves in seamlessly or destroys a planet. A new object will appear in the box they selected before, so they’ll once again have three options total. As of now, they won’t be able to remove anything or deselect a choice from the selection boxes; they would have to restart the program.
+
+Back-End
+Classes
+Solar System
+boolean Gravity()
+boolean Add(Object)
+boolean Add() [computer automated random addition]
+Planet
+double Radius 
+double Speed
+double Mass
+boolean Orbit()
+boolean Crash()
+Asteroid
+double Radius
+double EllipseX
+double EllipseY
+double Speed
+double Mass
+int Angle
+boolean Crash()
+boolean BurnUp()
+boolean GravitationalPull()
+Star - upper limit of 5 in system
+double Radius
+double Speed
+boolean Move()
+Setup
+Gravitational center is the middle by default - star would go there unless it was a binary system
+If binary system, stars would orbit it
+Option to set mass, speed, etc of planets, stars, and asteroids, or take one from a queue
+Selection buttons
+Three square/circular buttons will be displayed at the bottom of the window. Each button will have a word inside: asteroid, planet, or star. Once the user clicks one of the choices, the button will remain highlighted/enlarged and then they will have to place the selected object somewhere in the solar system. As of now, there is no way to unselect an object. Once the user places an object down, the box that was selected will change color and the next object in the queue will appear in the button.
+Three queues, or for variety( 1 stack, 1 queue, 1 array)
+ALTERNATELY, for the sake of variety in applying the concepts we learned this term, we could utilize one stack, 1 queue, and 1 array for each of the selection buttons. After the MVP, we may also use stacks to hold objects that will be removed from the system, in case the user chooses to bring it back.
+
+MVP ===========================================================================
+Sun
+Add planets, asteroids, stars
+Have planets orbiting Sun
+Handle asteroid and planet crashes
+Remove objects in system
+Medium: Stack
+On-click REMOVE button, freeze the system and allow the user to choose the item to remove. When an object is clicked, it is removed and added to the top of a stack and displayed on the sidebar; if the user would like to re-add one of the removed objects from the sidebar, they will click on the object and we will empty the stack as necessary to reach the object, take the object out, and then return the remaining objects to the stack.
+View System Stats
+Medium: Sorts
+The user will have a button to see current objects in the system, ordered from largest to smallest; if there is time, we will allow for more ordering such as closest to the sun, ascending order, etc.
+
+If We Have Time/Would Be Nice =======================================================
+Add stars
+Binary System
+Add big bang
+Add asteroids caught in orbit
+
+
+
+
+    Which jobs are most crucial?
+    Which components constitute core functionality (vs non-essential)?
+    Which components are prerequisites for others?
+    Which tasks can be delegated, and which must be collaboratively tackled?
+
+    What is the timeline, and how does it accommodate setbacks, course changes?
+
+
+
+
+
