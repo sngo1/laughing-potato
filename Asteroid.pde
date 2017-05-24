@@ -1,36 +1,36 @@
 class Asteroid {
   
-  double Radius;
-//  double SemiMajor;
-//  double SemiMinor;
-  double Speed;
-  double Mass;
+  double radius;
+//  double semiMajor;
+//  double semiMinor;
+  double speed;
+  double mass;
   double xCor;
   double yCor;
-  double OrbitRad;
+  double orbitRad;
   
-  int FocusOneX;
-  int FocusOneY;
-  int FocusTwoX;
-  int FocusTwoY;
+  int focusOneX;
+  int focusOneY;
+  int focusTwoX;
+  int focusTwoY;
   
   color c;
   
   Planet(){
   
-    Radius = random(500);
- //   SemiMajor = getSemiMajor();
+    radius = random(500);
+ //   semiMajor = getSemiMajor();
  //   SemiMinor = getSemiMinor();
-    Speed = getSpeed();
-    Mass = getMass();
+    speed = getSpeed();
+    mass = getMass();
     xCor = getXCor();
     yCor = getYCor();
-    OrbitRad = getOrbitRad();
+    orbitRad = getOrbitRad();
     
-    FocusOneX = getFocusOneX();
-    FocusOneY = getFocusOneY();
-    FocusTwoX = getFocusTwoX();
-    FocusTwoY = getFocusTwoY();
+    focusOneX = getFocusOneX();
+    focusOneY = getFocusOneY();
+    focusTwoX = getFocusTwoX();
+    focusTwoY = getFocusTwoY();
     
     float r = random(256);
     float g = random(256);
