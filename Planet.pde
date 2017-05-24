@@ -1,22 +1,22 @@
 class Planet {
   
-  double Radius;
-  double Speed;
-  double Mass;
+  double radius;
+  double speed;
+  double mass;
   double xCor;
   double yCor;
-  double OrbitRad;
+  double orbitRad;
   
   color c;
   
   Planet(){
   
-    Radius = random(500);
-    Speed = getSpeed();
-    Mass = getMass();
+    radius = random(500);
+    speed = getSpeed();
+    mass = getMass();
     xCor = getXCor();
     yCor = getYCor();
-    OrbitRad = getOrbitRad();
+    orbitRad = getOrbitRad();
     
     float r = random(256);
     float g = random(256);
