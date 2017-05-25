@@ -55,7 +55,7 @@ class Planet {
   }
 
   
-  double getOrbitRad(){
-    
-  }
+ /* double getOrbitRad(){
+    double r = Math.sqrt( Math.pow( ) )//Needs coordinates of center
+  }*/
 }
