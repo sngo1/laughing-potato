@@ -17,10 +17,9 @@ class Planet {
   }
   
   add(){
-        xCor = getXCor();
-    yCor = getYCor();
+    getCordinates();
     orbitRad = getOrbitRad();
-    getSpeed();
+    speed = getSpeed();
     
     float r = random(256);
     float g = random(256);
@@ -41,18 +40,22 @@ class Planet {
   } Figure this out later*/
   
   double getSpeed(){
-    speed = Math.sqrt(6.67408*Math.pow(10, -11) * mass / orbitRad);  //Gets speed based on mass & distance from star, constant bc circular orbit
-  }
+    double s = Math.sqrt(6.67408*Math.pow(10, -11) * mass / orbitRad);  //Gets speed based on mass & distance from star, constant bc circular orbit
+    return s;
+}
   
   double getMass(){
-  }
+    double m = Math.random() * 1.897 * Math.pow(10, 27) + 3.301 * Math.pow(10, 23); //Random mass between mercury's and Jupiter's
+    return m; 
+}
   
-  double getXcor(){
+  double getCordinates(){ //Sets coordinates to cordinates of mouse
+    Xcor = mouseX;        //Should be called when mouse holding planet clicks
+    Ycor = mouseY;
   }
-  
-  double getYCor(){
-  }
+
   
   double getOrbitRad(){
+    
   }
 }
