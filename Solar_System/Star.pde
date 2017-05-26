@@ -33,6 +33,7 @@ class Star {
   }
   
   boolean Move(){
+    return true;
   }
   
   double getSpeed(){
@@ -40,9 +41,11 @@ class Star {
   }
   
   double getXCor(int numStars){
+    return 0;
   }
   
   double getYCor(int numStars){
+    return 0;
   }
   
 }

@@ -16,7 +16,7 @@ class Planet {
 
   }
   
-  add(){
+  void add(){
     getCordinates();
     orbitRad = getOrbitRad();
     speed = getSpeed();
@@ -30,10 +30,11 @@ class Planet {
   
   void display(){
     fill(c);
-    ellipse ( xCor, yCor, ( 2 * radius ), ( 2 * radius ) );
+    ellipse ( (float) xCor, (float) yCor, (float) ( 2 * radius ), (float)( 2 * radius ) );
   }
   
   boolean Orbit(){
+    return true;
   }
   
  /* boolean Crash(){
@@ -49,13 +50,14 @@ class Planet {
     return m; 
 }
   
-  double getCordinates(){ //Sets coordinates to cordinates of mouse
-    Xcor = mouseX;        //Should be called when mouse holding planet clicks
-    Ycor = mouseY;
+  void getCordinates(){ //Sets coordinates to cordinates of mouse
+    xCor = mouseX;        //Should be called when mouse holding planet clicks
+    yCor = mouseY;
   }
 
   
- /* double getOrbitRad(){
-    double r = Math.sqrt( Math.pow( ) )//Needs coordinates of center
-  }*/
+  double getOrbitRad(){
+    double r = Math.sqrt( Math.pow( xCor, 2) + Math.pow(yCor, 2 ));//Assumes center is 0,0
+    return r;
+  }
 }
