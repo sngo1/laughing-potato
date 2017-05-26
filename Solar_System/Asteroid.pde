@@ -19,7 +19,7 @@ class Asteroid {
   
   color c;
   
-  Planet(){
+  void Asteroid(){
   
     radius = random(500);
  //   semiMajor = getSemiMajor();
