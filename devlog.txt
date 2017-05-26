@@ -62,3 +62,9 @@ Vernita :: Start setting up subclasses; edited UML diagram with new methods and 
 Samantha :: Edited flow chart
 Despoina :: Edited subclasses; worked on planet methods
 Vernita :: Created buttons to add objects; set up placement of buttons on display window
+
+2017-05-26
+--------------------------------------------------------------
+Samantha :: File relocation, Solar_System and display setup.
+Despoina :: Constructors and add() methods for Star and Planet. 
+Vernita :: Worked on display setup and buttons
