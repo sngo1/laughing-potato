@@ -1,3 +1,4 @@
+//BUTTON SETUP----------------------------------------------------------
 int asterX, asterY;    // Position of ASTEROID button
 int planetX, planetY;  // Position of PLANET button
 int starX, starY;      // Position of STAR button
@@ -13,9 +14,19 @@ boolean asterOver = false;
 boolean planetOver = false;
 boolean starOver = false;
 boolean randOver = false;
+//----------------------------------------------------------------------
+
+//FOOTER SETUP----------------------------------------------------------
+int footerX, footerY;
+int footerHeight = 100;
+int footerWidth = 1200;
+color footerColor;
+//----------------------------------------------------------------------
 
 void setup() {
   size(1000, 700);
+  
+  //BUTTON--------------------
   asterColor = color(255,0,128);
   asterHighlight = color(255,0,128,191);
   planetColor = color(163,73,164);
@@ -34,12 +45,24 @@ void setup() {
   starY = height/2-starSize/2+300;
   randX = width/2+randSize/2-475;
   randY = height/2+300;
+  //--------------------------
+  
+  //FOOTER--------------------
+  footerColor = color(0,0,0);
+  footerX = 0;
+  footerY = height-footerHeight;
+  //--------------------------
 }
 
 void draw() {
   update(mouseX, mouseY);
   background(currentColor);
   
+  //FOOTER--------------------
+  rect(footerX, footerY, footerWidth, footerHeight);
+  //--------------------------
+  
+  //BUTTON--------------------
   if (asterOver) {
     fill(asterHighlight);
   } else {
@@ -71,6 +94,7 @@ void draw() {
   }
   stroke(0);
   ellipse(randX, randY, randSize, randSize);
+  //--------------------------
 }
 
 void update(int x, int y) {
