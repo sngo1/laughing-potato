@@ -4,15 +4,14 @@ class Star {
   double speed;
   double xCor;
   double yCor;
+  double mass;
   
   color c;
   
-  Planet(){
+  Star(){
   
-    radius = random(500);
-    speed = getSpeed();
-    xCor = getXCor();
-    yCor = getYCor();
+    radius = Math.random() * 500; //Figure out later
+    mass = Math.random()* 8 + Math.pow(10, 30);
     
     float r = random(256);
     float g = random(256);
@@ -21,21 +20,29 @@ class Star {
     
   }
   
+  void add(){
+    speed = getSpeed();
+    xCor = getXCor(1);
+    yCor = getYCor(1);
+       
+  }
+  
   void display(){
     fill(c);
-    ellipse ( xCor, yCor, ( 2 * radius ), ( 2 * radius ) );
+    ellipse ( (float)xCor, (float)yCor, (float) ( 2 * radius ), (float)( 2 * radius ) );
   }
   
   boolean Move(){
   }
   
   double getSpeed(){
+     return 0;
   }
   
-  double getXcor(){
+  double getXCor(int numStars){
   }
   
-  double getYCor(){
+  double getYCor(int numStars){
   }
   
 }
