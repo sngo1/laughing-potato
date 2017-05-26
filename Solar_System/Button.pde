@@ -2,10 +2,10 @@ int asterX, asterY;    // Position of ASTEROID button
 int planetX, planetY;  // Position of PLANET button
 int starX, starY;      // Position of STAR button
 int randX, randY;      // Position of RANDADD button
-int asterSize = 90;    // Diameter of ASTEROID button
-int planetSize = 90;   // Diameter of PLANET
-int starSize = 90;     // Diameter of STAR button
-int randSize = 93;     // Diameter of RANDADD button
+int asterSize = 60;    // Diameter of ASTEROID button
+int planetSize = 60;   // Diameter of PLANET
+int starSize = 60;     // Diameter of STAR button
+int randSize = 63;     // Diameter of RANDADD button
 color asterColor, planetColor, starColor, randColor, baseColor;
 color asterHighlight, planetHighlight, starHighlight, randHighlight;
 color currentColor;
@@ -15,7 +15,7 @@ boolean starOver = false;
 boolean randOver = false;
 
 void setup() {
-  size(800, 800);
+  size(1000, 700);
   asterColor = color(255,0,128);
   asterHighlight = color(255,0,128,191);
   planetColor = color(163,73,164);
@@ -26,14 +26,14 @@ void setup() {
   randHighlight = color(209);
   baseColor = color(0);
   currentColor = baseColor;
-  asterX = width/2-asterSize-100;
-  asterY = height/2-asterSize/2+250;
-  planetX = width/2-planetSize+0;
-  planetY = height/2-planetSize/2+250;
-  starX = width/2-starSize+100;
-  starY = height/2-starSize/2+250;
-  randX = width/2+randSize/2-350;
-  randY = height/2+250;
+  asterX = width/2-asterSize-300;
+  asterY = height/2-asterSize/2+300;
+  planetX = width/2-planetSize-225;
+  planetY = height/2-planetSize/2+300;
+  starX = width/2-starSize-150;
+  starY = height/2-starSize/2+300;
+  randX = width/2+randSize/2-475;
+  randY = height/2+300;
 }
 
 void draw() {
