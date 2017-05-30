@@ -48,7 +48,7 @@ void setup() {
   //--------------------------
   
   //FOOTER--------------------
-  footerColor = color(0,0,0);
+  footerColor = color(#89c6de);
   footerX = 0;
   footerY = height-footerHeight;
   //--------------------------
@@ -59,6 +59,7 @@ void draw() {
   background(currentColor);
   
   //FOOTER--------------------
+  fill(footerColor);
   rect(footerX, footerY, footerWidth, footerHeight);
   //--------------------------
   
