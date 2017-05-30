@@ -19,7 +19,7 @@ boolean randOver = false;
 //FOOTER SETUP----------------------------------------------------------
 int footerX, footerY;
 int footerHeight = 100;
-int footerWidth = 1200;
+int footerWidth = 1000;
 color footerColor;
 //----------------------------------------------------------------------
 
@@ -48,7 +48,7 @@ void setup() {
   //--------------------------
   
   //FOOTER--------------------
-  footerColor = color(0,0,0);
+  footerColor = color(#89c6de);
   footerX = 0;
   footerY = height-footerHeight;
   //--------------------------
@@ -59,6 +59,7 @@ void draw() {
   background(currentColor);
   
   //FOOTER--------------------
+  fill(footerColor);
   rect(footerX, footerY, footerWidth, footerHeight);
   //--------------------------
   
