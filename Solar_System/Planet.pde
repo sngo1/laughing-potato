@@ -1,7 +1,9 @@
 class Planet {
   
   double radius;
+  double scaledR;
   double speed;
+  double scaledSpeed;
   double mass;
   double xCor;
   double yCor;
