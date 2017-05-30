@@ -17,6 +17,8 @@ class Planet {
     getCordinates();
     orbitRad = getOrbitRad();
     speed = getSpeed();
+    scaledR = 16;
+    scaledSpeed = speed / (Math.pow(10, 6));
     
     float r = random(256);
     float g = random(256);
