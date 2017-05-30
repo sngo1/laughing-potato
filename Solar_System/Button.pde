@@ -19,7 +19,7 @@ boolean randOver = false;
 //FOOTER SETUP----------------------------------------------------------
 int footerX, footerY;
 int footerHeight = 100;
-int footerWidth = 1200;
+int footerWidth = 1000;
 color footerColor;
 //----------------------------------------------------------------------
 
