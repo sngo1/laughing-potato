@@ -9,6 +9,8 @@ Star[] availableStars = new Star[5];
 ArrayList<Asteroid> availableAsteroids = new ArrayList();
 ArrayList<Planet> availablePlanets = new ArrayList();
 
+ArrayList lastAdded = new Arraylist();
+
 void draw(){
   for(Star q: stars){
      q.draw(); 
@@ -28,7 +30,6 @@ void populateAvStars(){
     availableStars[x] = q;
  }
 }
-
 
 
 }

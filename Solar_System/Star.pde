@@ -1,7 +1,9 @@
 class Star {
   
   double radius;
+  double scaledRadius;
   double speed;
+  double scaledSpeed;
   double xCor;
   double yCor;
   double mass;
@@ -10,8 +12,9 @@ class Star {
   
   Star(){
   
-    radius = Math.random() * 500; //Figure out later
-    mass = Math.random()* 8 + Math.pow(10, 30);
+    radius = 695700 //Radius of sun
+    //scaledRadius = ;
+    mass = (Math.random() * Math.pow(10, 31)) + (9.945 * Math.pow(10, 29)); //Random number between 1/2 mass of sun and 10x
     
     float r = random(256);
     float g = random(256);
@@ -22,6 +25,7 @@ class Star {
   
   void add(){
     speed = getSpeed();
+    //scaledSpeed = ???
     xCor = getXCor(1);
     yCor = getYCor(1);
        

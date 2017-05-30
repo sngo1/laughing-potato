@@ -14,9 +14,6 @@ class Planet {
     radius = random(500);
     mass = getMass();
 
-  }
-  
-  void add(){
     getCordinates();
     orbitRad = getOrbitRad();
     speed = getSpeed();
@@ -46,7 +43,9 @@ class Planet {
 }
   
   double getMass(){
-    double m = Math.random() * 1.897 * Math.pow(10, 27) + 3.301 * Math.pow(10, 23); //Random mass between mercury's and Jupiter's
+    
+    
+   // double m = Math.random() * 1.897 * Math.pow(10, 27) + 3.301 * Math.pow(10, 23); //Random mass between mercury's and Jupiter's
     return m; 
 }
   
