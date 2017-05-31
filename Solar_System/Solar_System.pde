@@ -2,31 +2,30 @@
 //Separate arraylists for different objects
 //ArrayList<Asteroid> asteroids; //Contains all asteroids
 //ArrayList<Planet> planets; //Contains planets
-Star[] stars;//Contains stars - arbitrary limit of 5 stars in a system
+ArrayList<Star> stars;//Contains stars - arbitrary limit of 5 stars in a system
 int numStars; //Can't be greater than 5
 Button test;
 
-Star[] availableStars = new Star[5];
 //ArrayList<Asteroid> availableAsteroids = new ArrayList();
 //ArrayList<Planet> availablePlanets = new ArrayList();
 
 //ArrayList lastAdded = new Arraylist();
 
 void setup(){
+  size(1000, 700);
   test = new Button();
   test.setup();
-    size(1000, 700);
 //  asteroids = new ArrayList();
 //  planets = new ArrayList();
-  stars = new Star[5]; 
+  stars = new ArrayList(); 
   numStars = 0;
   Star q = new Star();
   q.add();
-  stars[0] = q;
+  stars.add( q);
 }
 
 void draw(){
-  test.drawB();
+  test.draw();
   for(Star q: stars){
      q.draw(); 
   }

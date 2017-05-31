@@ -32,7 +32,7 @@ class Star {
   }
   
   void draw(){
-    ellipse ( (float)xCor, (float)yCor, (float) ( 2 * radius ), (float)( 2 * radius ) );
+    ellipse ( (float)xCor, (float)yCor, (float) ( 2 * scaledRadius ), (float)( 2 * scaledRadius ) );
     fill(c);
   }
   
@@ -49,6 +49,6 @@ class Star {
   }
   
   double getYCor(int numStars){
-    return 500;
+    return 300;
   }
 }
