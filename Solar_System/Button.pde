@@ -1,3 +1,5 @@
+class Button{
+
 //BUTTON SETUP----------------------------------------------------------
 int asterX, asterY;    // Position of ASTEROID button
 int planetX, planetY;  // Position of PLANET button
@@ -28,7 +30,7 @@ color footerColor;
 //----------------------------------------------------------------------
 
 void setup() {
-  size(1000, 700);
+ // size(1000, 700);
   
   //BUTTON--------------------
   asterColor = color(255,0,128);
@@ -213,4 +215,5 @@ boolean overRand(int x, int y, int diameter) {
   } else {
     return false;
   }
+}
 }

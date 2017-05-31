@@ -45,10 +45,10 @@ class Star {
   }
   
   double getXCor(int numStars){
-    return 0;
+    return 500;
   }
   
   double getYCor(int numStars){
-    return 0;
+    return 500;
   }
 }
