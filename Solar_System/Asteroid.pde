@@ -22,6 +22,7 @@ class Asteroid {
   void Asteroid(){
   
     radius = random(500);
+    eccentricity = Math.random() * 
  //   semiMajor = getSemiMajor();
  //   SemiMinor = getSemiMinor();
 /*    speed = getSpeed();
