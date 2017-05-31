@@ -12,7 +12,7 @@ class Star {
   
   Star(){
   
-    radius = 695700 //Radius of sun
+    radius = 695700; //Radius of sun
     scaledRadius = 25;//NOT ACTUALLY TO SCALE
     mass = (Math.random() * Math.pow(10, 31)) + (9.945 * Math.pow(10, 29)); //Random number between 1/2 mass of sun and 10x
     
@@ -31,9 +31,9 @@ class Star {
        
   }
   
-  void display(){
-    fill(c);
+  void draw(){
     ellipse ( (float)xCor, (float)yCor, (float) ( 2 * radius ), (float)( 2 * radius ) );
+    fill(c);
   }
   
   boolean Move(){
