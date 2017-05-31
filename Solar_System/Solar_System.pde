@@ -18,6 +18,7 @@ void setup(){
 //  asteroids = new ArrayList();
 //  planets = new ArrayList();
   stars = new ArrayList(); 
+  planets = new ArrayList();
   numStars = 0;
 }
 
@@ -26,10 +27,10 @@ void draw(){
   for(Star q: stars){
      q.draw(); 
   }
- /* for(Planet p: planets){
+  for(Planet p: planets){
     p.draw();
   }
-  for(Asteroid w: asteroids){
+ /* for(Asteroid w: asteroids){
    w.draw(); 
   }*/
   

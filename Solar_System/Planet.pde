@@ -8,6 +8,7 @@ class Planet {
   double xCor;
   double yCor;
   double orbitRad;
+  double scaledOrbitR;
   
   color c;
   
@@ -15,13 +16,12 @@ class Planet {
   
     radius = random(500);
     mass = getMass();
-
-    getCordinates();
     orbitRad = getOrbitRad();
     speed = getSpeed();
     scaledR = 16;
     scaledSpeed = speed / (Math.pow(10, 6));
-    
+    scaledOrbitR = orbitRad / Math.pow(10, 6);
+    getCoordinates();
     float r = random(256);
     float g = random(256);
     float b = random(256);
@@ -30,9 +30,9 @@ class Planet {
   }
  
   
-  void display(){
+  void draw(){
+    ellipse ( (float) xCor, (float) yCor, (float) ( 2 * scaledR ), (float)( 2 * scaledR ) );
     fill(c);
-    ellipse ( (float) xCor, (float) yCor, (float) ( 2 * radius ), (float)( 2 * radius ) );
   }
   
   boolean Orbit(){
@@ -55,14 +55,14 @@ class Planet {
     return 0;
 }
   
-  void getCordinates(){ //Sets coordinates to cordinates of mouse
-    xCor = mouseX;        //Should be called when mouse holding planet clicks
-    yCor = mouseY;
+  void getCoordinates(){ //Sets coordinates to cordinates of mouse
+    xCor = 500+scaledOrbitR;        //Should be called when mouse holding planet clicks
+    yCor = 300;
   }
 
   
   double getOrbitRad(){
-    double r = Math.sqrt( Math.pow( xCor, 2) + Math.pow(yCor, 2 ));//Assumes center is 0,0
+    double r = Math.pow(10, 8);//Assumes center is 0,0
     return r;
   }
 }

@@ -81,6 +81,10 @@ void draw() {
   
   if (planetOver) {
     fill(planetHighlight);
+    if(mousePressed){
+      Planet p = new Planet();
+      planets.add(p);
+    }
   } else {
     fill(planetColor);
   }
