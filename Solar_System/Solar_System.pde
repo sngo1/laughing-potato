@@ -1,7 +1,7 @@
 
 //Separate arraylists for different objects
 //ArrayList<Asteroid> asteroids; //Contains all asteroids
-//ArrayList<Planet> planets; //Contains planets
+ArrayList<Planet> planets; //Contains planets
 ArrayList<Star> stars;//Contains stars - arbitrary limit of 5 stars in a system
 int numStars; //Can't be greater than 5
 Button test;

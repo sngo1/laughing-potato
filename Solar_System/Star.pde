@@ -7,6 +7,7 @@ class Star {
   double xCor;
   double yCor;
   double mass;
+  int type; //0 = 
   
   color c;
   

@@ -28,6 +28,7 @@ class Planet {
     c = color( r , g , b );
     
   }
+ 
   
   void display(){
     fill(c);

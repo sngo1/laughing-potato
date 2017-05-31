@@ -121,6 +121,8 @@ void draw() {
     fill(planetColor);
     ellipse(mouseX, mouseY, 33, 33);
     planetPressed = false;
+    Planet p = new Planet();
+    planets.add(p);
   }
   if (starPressed){
     fill(starColor);
@@ -130,6 +132,7 @@ void draw() {
        q.add();
        stars.add(q);
     }
+      starPressed = false;
   }
 }
 
