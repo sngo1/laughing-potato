@@ -102,7 +102,7 @@ void draw() {
   }
   stroke(0);
   ellipse(randX, randY, randSize, randSize);
-  text("RANDOM", randX-randSize/2, randY-randSize/2);
+  text("RANDOM", randX-randSize/2+7, randY-randSize/2-1);
   //--------------------------
   
   if (randPressed){
