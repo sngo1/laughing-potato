@@ -19,9 +19,6 @@ void setup(){
 //  planets = new ArrayList();
   stars = new ArrayList(); 
   numStars = 0;
-  Star q = new Star();
-  q.add();
-  stars.add( q);
 }
 
 void draw(){

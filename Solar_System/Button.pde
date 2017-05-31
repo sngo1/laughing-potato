@@ -125,6 +125,11 @@ void draw() {
   if (starPressed){
     fill(starColor);
     ellipse(mouseX, mouseY, 33, 33);
+    if(mousePressed){
+       Star q = new Star();
+       q.add();
+       stars.add(q);
+    }
   }
 }
 
