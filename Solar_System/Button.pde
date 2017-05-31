@@ -14,6 +14,10 @@ boolean asterOver = false;
 boolean planetOver = false;
 boolean starOver = false;
 boolean randOver = false;
+boolean asterPressed = false;
+boolean planetPressed = false;
+boolean starPressed = false;
+boolean randPressed = false;
 //----------------------------------------------------------------------
 
 //FOOTER SETUP----------------------------------------------------------
@@ -71,6 +75,7 @@ void draw() {
   }
   stroke(255);
   rect(asterX, asterY, asterSize, asterSize);
+  text("ASTEROID", asterX, asterY);
   
   if (planetOver) {
     fill(planetHighlight);
@@ -79,6 +84,7 @@ void draw() {
   }
   stroke(255);
   rect(planetX, planetY, planetSize, planetSize);
+  text("PLANET", planetX+10, planetY);
   
   if (starOver) {
     fill(starHighlight);
@@ -87,6 +93,7 @@ void draw() {
   }
   stroke(255);
   rect(starX, starY, starSize, starSize);
+  text("STAR", starX+15, starY);
   
   if (randOver) {
     fill(randHighlight);
@@ -95,7 +102,28 @@ void draw() {
   }
   stroke(0);
   ellipse(randX, randY, randSize, randSize);
+  text("RANDOM", randX-randSize/2, randY-randSize/2);
   //--------------------------
+  
+  if (randPressed){
+    fill(randColor);
+    ellipse(mouseX, mouseY, 33, 33);
+    randPressed = false;
+  }
+  if (asterPressed){
+    fill(asterColor);
+    ellipse(mouseX, mouseY, 33, 33);
+    asterPressed = false;
+  }
+  if (planetPressed){
+    fill(planetColor);
+    ellipse(mouseX, mouseY, 33, 33);
+    planetPressed = false;
+  }
+  if (starPressed){
+    fill(starColor);
+    ellipse(mouseX, mouseY, 33, 33);
+  }
 }
 
 void update(int x, int y) {
@@ -122,6 +150,17 @@ void update(int x, int y) {
   } else {
     randOver = asterOver = planetOver = starOver = false;
   }
+  
+  if (mousePressed == true && overRand(randX, randY, randSize) ) {
+    randPressed = true;
+  } else if (mousePressed == true && overAster(asterX, asterY, asterSize, asterSize) ){
+    asterPressed = true;
+  } else if (mousePressed == true && overPlanet(planetX, planetY, planetSize, planetSize) ) {
+    planetPressed = true;
+  } else if (mousePressed == true && overStar(starX, starY, starSize, starSize) ) {
+    starPressed = true;
+  }
+
 }
 
 void mousePressed() {
