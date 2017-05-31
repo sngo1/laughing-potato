@@ -24,16 +24,16 @@ class Asteroid {
     radius = random(500);
  //   semiMajor = getSemiMajor();
  //   SemiMinor = getSemiMinor();
-    speed = getSpeed();
-    mass = getMass();
-    xCor = getXCor();
+/*    speed = getSpeed();
+//mass = getMass();
+//    xCor = getXCor();
     yCor = getYCor();
-    orbitRad = getOrbitRad();
+//    orbitRad = getOrbitRad();
     
     focusOneX = getFocusOneX();
-    focusOneY = getFocusOneY();
+//    focusOneY = getFocusOneY();
     focusTwoX = getFocusTwoX();
-    focusTwoY = getFocusTwoY();
+//    focusTwoY = getFocusTwoY();*/
     
     float r = random(256);
     float g = random(256);
@@ -42,7 +42,7 @@ class Asteroid {
     
   }
   
-  void display(){
+/*  void display(){
     fill(c);
     ellipse ( xCor, yCor, ( 2 * radius ), ( 2 * radius ) );
   }
@@ -79,5 +79,4 @@ class Asteroid {
   
   int getFocusTwoX(){
   }
-  
-}
+  */}

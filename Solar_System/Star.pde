@@ -51,5 +51,4 @@ class Star {
   double getYCor(int numStars){
     return 0;
   }
-  
 }
