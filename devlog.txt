@@ -68,3 +68,15 @@ Vernita :: Created buttons to add objects; set up placement of buttons on displa
 Samantha :: File relocation, Solar_System and display setup.
 Despoina :: Constructors and add() methods for Star and Planet. 
 Vernita :: Worked on display setup and buttons
+
+2017-05-27,28,29
+--------------------------------------------------------------
+Samantha :: Worked on plan; familiarized self with Processing methods
+Despoina :: Constructors and add() methods for Star and Planet. 
+Vernita :: Display setup, buttons; familiarized self with Processing methods
+
+2017-05-30
+--------------------------------------------------------------
+Samantha :: Worked on main method.
+Despoina :: Constructors and add() methods for Star and Planet. 
+Vernita :: Added ADD methods to Asteroid, Star, Planet
