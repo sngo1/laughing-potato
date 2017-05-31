@@ -33,6 +33,7 @@ class Planet {
   void draw(){
     ellipse ( (float) xCor, (float) yCor, (float) ( 2 * scaledR ), (float)( 2 * scaledR ) );
     fill(c);
+
   }
   
   boolean Orbit(){
