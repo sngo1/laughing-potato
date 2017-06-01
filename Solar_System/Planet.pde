@@ -19,7 +19,7 @@ class Planet {
     orbitRad = getOrbitRad();
     speed = getSpeed();
     scaledR = 16;
-    scaledSpeed = speed / (Math.pow(10, 6));
+    scaledSpeed = speed / (Math.pow(10, 3));
     scaledOrbitR = orbitRad / Math.pow(10, 6);
     getCoordinates();
     float r = random(256);
@@ -102,26 +102,33 @@ class Planet {
       double dx = Math.sqrt( Math.pow(scaledOrbitR, 2) / (1+ 1/(Math.pow(m, 2))));
       double dy = Math.sqrt(Math.pow(scaledOrbitR,2) /  (1+Math.pow(m, 2)));
       if(m>0){
-       if(xCor>500){
+       if(yCor>300){
         dy *= -1;
         dx *= -1;
        }
       }
       else if (m<0){
-        if(xCor > 500){
-         dy *= -1; 
+        if(yCor > 300){
+         dx *= -1;
         }
         else{
-          dx *= -1;
+          dy *= -1;
         }
       }
-      double vx = scaledSpeed*dx/m;
-      double vy = scaledSpeed*dy/m;
+      double vx = scaledSpeed*dx/m ;
+      double vy = scaledSpeed*dy/m ;
       xCor += vx;
-      yCor+=vy;
+      yCor += vy;
+      color c = color(200);
+     fill(c);
     }
     else{
-     xCor+= scaledSpeed/60;
+      if(xCor >500){
+       yCor+= scaledSpeed;
+      }
+      else{
+        yCor-=scaledSpeed;
+      }
     }
     
   }
