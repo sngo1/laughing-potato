@@ -5,13 +5,16 @@ int asterX, asterY;    // Position of ASTEROID button
 int planetX, planetY;  // Position of PLANET button
 int starX, starY;      // Position of STAR button
 int randX, randY;      // Position of RANDADD button
+int clearX, clearY;
 int asterSize = 60;    // Diameter of ASTEROID button
 int planetSize = 60;   // Diameter of PLANET
 int starSize = 60;     // Diameter of STAR button
 int randSize = 63;     // Diameter of RANDADD button
+int clearSize = 60;
 color asterColor, planetColor, starColor, randColor, baseColor;
 color asterHighlight, planetHighlight, starHighlight, randHighlight;
 color currentColor;
+color clearColor;
 boolean asterOver = false;
 boolean planetOver = false;
 boolean starOver = false;
@@ -20,6 +23,7 @@ boolean asterPressed = false;
 boolean planetPressed = false;
 boolean starPressed = false;
 boolean randPressed = false;
+boolean clearPressed = false;
 //----------------------------------------------------------------------
 
 //FOOTER SETUP----------------------------------------------------------
@@ -51,6 +55,9 @@ void setup() {
   starY = height/2-starSize/2+300;
   randX = width/2+randSize/2-475;
   randY = height/2+300;
+  clearX = starX + 100;
+  clearY = starY;
+  clearColor = color(0);
   //--------------------------
   
   //FOOTER--------------------
@@ -115,11 +122,13 @@ void draw() {
     fill(randColor);
     ellipse(mouseX, mouseY, 33, 33);
     randPressed = false;
+    delay(300);
   }
   if (asterPressed){
     fill(asterColor);
     ellipse(mouseX, mouseY, 33, 33);
     asterPressed = false;
+    delay(300);
   }
   if (planetPressed){
     fill(planetColor);
@@ -127,6 +136,7 @@ void draw() {
     planetPressed = false;
     Planet p = new Planet();
     planets.add(p);
+    delay(300);
   }
   if (starPressed){
     fill(starColor);
@@ -135,6 +145,7 @@ void draw() {
        Star q = new Star();
        q.add();
        stars.add(q);
+       delay(300);
     }
       starPressed = false;
   }
