@@ -80,3 +80,9 @@ Vernita :: Display setup, buttons; familiarized self with Processing methods
 Samantha :: Worked on main method.
 Despoina :: Constructors and add() methods for Star and Planet. 
 Vernita :: Added ADD methods to Asteroid, Star, Planet
+
+2017-05-31
+--------------------------------------------------------------
+Samantha :: 
+Despoina :: Worked on keyboard input for planet and displaying star in center and planets
+Vernita :: 
