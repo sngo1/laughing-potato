@@ -33,6 +33,7 @@ class Planet {
   void draw(){
     ellipse ( (float) xCor, (float) yCor, (float) ( 2 * scaledR ), (float)( 2 * scaledR ) );
     fill(c);
+    this.orbit();
 
   }
   
@@ -53,7 +54,7 @@ class Planet {
     
    // double m = Math.random() * 1.897 * Math.pow(10, 27) + 3.301 * Math.pow(10, 23); //Random mass between mercury's and Jupiter's
     //return m; 
-    return 0;
+    return 6 * Math.pow(10, 24);
 }
   
   void getCoordinates(){ //Sets coordinates to cordinates of mouse
@@ -96,22 +97,31 @@ class Planet {
   
   void orbit(){
     String slope = this.findSlope();
-    if(slope.equals("1/0")){
+    if(! slope.equals("1/0")){
      double m = Double.parseDouble(slope);
-      double dx = Math.sqrt( Math.pow(scaledSpeed, 2) / (1+ 1/(Math.pow(m, 2))));
-      double dy = Math.sqrt(Math.pow(scaledSpeed,2) /  (1+Math.pow(m, 2)));
+      double dx = Math.sqrt( Math.pow(scaledOrbitR, 2) / (1+ 1/(Math.pow(m, 2))));
+      double dy = Math.sqrt(Math.pow(scaledOrbitR,2) /  (1+Math.pow(m, 2)));
       if(m>0){
        if(xCor>500){
         dy *= -1;
         dx *= -1;
        }
       }
-      else{
-        
+      else if (m<0){
+        if(xCor > 500){
+         dy *= -1; 
+        }
+        else{
+          dx *= -1;
+        }
       }
+      double vx = scaledSpeed*dx/m;
+      double vy = scaledSpeed*dy/m;
+      xCor += vx;
+      yCor+=vy;
     }
     else{
-     
+     xCor+= scaledSpeed/60;
     }
     
   }
