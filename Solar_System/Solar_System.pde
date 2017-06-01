@@ -36,9 +36,7 @@ void draw(){
   
 }
 
-/*void populateAvStars(){
- for(int x = 0; x < 5; x++){
-    Star q = new Star();
-    availableStars[x] = q;
- }
-}*/
+void clear(){
+  planets = new ArrayList();
+  stars = new ArrayList();
+}
