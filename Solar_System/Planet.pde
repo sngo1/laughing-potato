@@ -94,8 +94,25 @@ class Planet {
      return m;
   }
   
-  void move(){
-    
+  void orbit(){
+    String slope = this.findSlope();
+    if(slope.equals("1/0")){
+     double m = Double.parseDouble(slope);
+      double dx = Math.sqrt( Math.pow(scaledSpeed, 2) / (1+ 1/(Math.pow(m, 2))));
+      double dy = Math.sqrt(Math.pow(scaledSpeed,2) /  (1+Math.pow(m, 2)));
+      if(m>0){
+       if(xCor>500){
+        dy *= -1;
+        dx *= -1;
+       }
+      }
+      else{
+        
+      }
+    }
+    else{
+     
+    }
     
   }
 }
