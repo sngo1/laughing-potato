@@ -82,4 +82,20 @@ class Planet {
     return num;
   
   }
+  
+  String findSlope(){
+    String m;
+     if(yCor!=300){
+       m = String.valueOf((xCor - 500)/(yCor - 300));
+     }
+     else{
+       m = "1/0";
+     }
+     return m;
+  }
+  
+  void move(){
+    
+    
+  }
 }
