@@ -63,7 +63,23 @@ class Planet {
 
   
   double getOrbitRad(){
-    double r = Math.pow(10, 8);//Assumes center is 0,0
+    double r = this.keyPressed() * Math.pow(10, 8);//Assumes center is 0,0
     return r;
+  }
+  
+  int keyPressed(){
+ /*   String str = "";
+    char ch;
+    if(key != 'a'){
+      ch = key;
+      str +=  Character.toString(ch);
+    }
+    if(str.equals("")){
+      return 0;
+    }
+    else{*/
+    int num = Character.getNumericValue(key);
+    return num;
+  
   }
 }
