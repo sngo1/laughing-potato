@@ -46,7 +46,7 @@ class Asteroid {
 
   void display() {
     fill(c);
-    ellipse ( xCor, yCor, ( 2 * radius ), ( 2 * radius ) );
+    ellipse ( (float) xCor, (float) yCor, (float) ( 2 * radius ), (float) ( 2 * radius ) );
   }
 
   // Accessor Methods --------------------------------------------
@@ -63,7 +63,7 @@ class Asteroid {
   }
 
   double getYCor() {
-    return YCor;
+    return yCor;
   }
 
   int getFocusOneX() {
@@ -78,12 +78,10 @@ class Asteroid {
     return focusTwoX;
   }
 
-  int getFocusTwoX() {
-    return focusTwoX;
-  }
   // -------------------------------------------------------------
 
   boolean Crash() {
+    return false; //so it can compile
   }
   
   void add() {
