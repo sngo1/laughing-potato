@@ -9,6 +9,7 @@ class Planet {
   double yCor;
   double orbitRad;
   double scaledOrbitR;
+  double t = 0;
   
   color c;
   
@@ -84,52 +85,12 @@ class Planet {
   
   }
   
-  String findSlope(){
-    String m;
-     if(yCor!=300){
-       m = String.valueOf((xCor - 500)/(yCor - 300));
-     }
-     else{
-       m = "1/0";
-     }
-     return m;
-  }
-  
   void orbit(){
-    String slope = this.findSlope();
-    if(! slope.equals("1/0")){
-     double m = Double.parseDouble(slope);
-      double dx = Math.sqrt( Math.pow(scaledOrbitR, 2) / (1+ 1/(Math.pow(m, 2))));
-      double dy = Math.sqrt(Math.pow(scaledOrbitR,2) /  (1+Math.pow(m, 2)));
-      if(m>0){
-       if(yCor>300){
-        dy *= -1;
-        dx *= -1;
-       }
-      }
-      else if (m<0){
-        if(yCor > 300){
-         dx *= -1;
-        }
-        else{
-          dy *= -1;
-        }
-      }
-      double vx = scaledSpeed*dx/m ;
-      double vy = scaledSpeed*dy/m ;
-      xCor += vx;
-      yCor += vy;
-      color c = color(200);
-     fill(c);
-    }
-    else{
-      if(xCor >500){
-       yCor+= scaledSpeed;
-      }
-      else{
-        yCor-=scaledSpeed;
-      }
-    }
-    
+   double x = scaledOrbitR * cos((float)t); 
+   double y = scaledOrbitR * sin((float)t);
+   t+=5;
+   if(t>= 2* Math.PI){
+     t-= 2*Math.PI;
   }
+ 
 }
