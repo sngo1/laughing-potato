@@ -42,3 +42,7 @@ void clear(){
   planets = new ArrayList();
   stars = new ArrayList();
 }
+
+void removeLast(){
+ lastAdded.remove( lastAdded.size() -1); 
+}
