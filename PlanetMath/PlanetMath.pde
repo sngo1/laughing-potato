@@ -1,4 +1,3 @@
-
 float r = 100; //
 float xCenter = 250;
 float yCenter = 250;

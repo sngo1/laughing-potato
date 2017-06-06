@@ -1,23 +1,22 @@
 class Planet {
   
-  double planetRadius = 16;
+  float planetRadius = 16;
   // double speed;
-  double xCor;
-  double yCor;
-  double scaledOrbitR;
+  float xCor;
+  float yCor;
+  float scaledOrbitR;
   float xCenter = 500;
   float yCenter = 300;
+  float q;
+  float changeX = 1;
   color c;
   
   Planet(int x, int y){
   
-
-    scaledOrbitR = getOrbitRad();
- //   scaledSpeed = speed / (Math.pow(10, 3));
-//    scaledOrbitR = orbitRad / Math.pow(10, 6);
-    //getCoordinates();
     xCor = x;
     yCor = y;
+    scaledOrbitR = getOrbitRad();
+
     float r = random(256);
     float g = random(256);
     float b = random(256);
@@ -27,9 +26,10 @@ class Planet {
  
   
   void draw(){
-    ellipse ( (float) xCor, (float) yCor, (float) ( 2 * planetRadius ), (float)( 2 * planetRadius ) );
+    this.orbit();
+    ellipse ( xCor, yCor,  2 * planetRadius ,  2 * planetRadius);
     fill(c);
-    //this.orbit();
+
 
   }
   
@@ -40,33 +40,54 @@ class Planet {
  /* boolean Crash(){
   } Figure this out later*/
   
-  /*
-  double getSpeed(){
-    double s = Math.sqrt(6.67408*Math.pow(10, -11) * mass / orbitRad);  //Gets speed based on mass & distance from star, constant bc circular orbit
-    return s;
-}
-  
-  double getMass(){
+  float getOrbitRad(){
+    float r = sqrt( sq(xCor - xCenter) + sq(yCor - yCenter)); 
     
+    // ================================
+    boolean firstQuad = false;
+    boolean secondQuad = false;
+    boolean thirdQuad = false;
+    boolean fourthQuad = false;
     
-   // double m = Math.random() * 1.897 * Math.pow(10, 27) + 3.301 * Math.pow(10, 23); //Random mass between mercury's and Jupiter's
-    //return m; 
-    return 6 * Math.pow(10, 24);
-  }
- */
-  
-  /*
-  void getCoordinates(){ //Sets coordinates to cordinates of mouse
-    xCor = 500+scaledOrbitR;        //Should be called when mouse holding planet clicks
-    yCor = 300;
-  }
-  */
-  
-  double getOrbitRad(){
-    double r = this.keyPressed() * Math.pow(10, 8);//Assumes center is 0,0
+    if( xCor <= xCenter){
+      if(yCor <= yCenter){
+        secondQuad = true;
+      } else {
+        thirdQuad = true;
+      } 
+    } else {
+      if(yCor >= yCenter){
+        fourthQuad = true;
+      } else {
+        firstQuad = true;
+      } 
+    }
+    
+    if(firstQuad || secondQuad){
+      q = 0;
+    } else {
+      q = 1;
+    }
+    
+    // ================================
+   /*   
+    if(yCor > yCenter){
+       q = 1; 
+    }
+    else if(yCor < yCenter){
+     q = 0; 
+    }
+    else{
+      if(xCor  < xCenter){
+       q = 0; 
+      }
+      else{
+        q = 1;
+      }
+    }*/
+    
     return r;
-  }
-  
+  }  
   
   int keyPressed(){
  /*   String str = "";
@@ -84,15 +105,23 @@ class Planet {
   
   }
   
-  /*
+ 
   void orbit(){
-   double x = scaledOrbitR * cos((float)t); 
-   double y = scaledOrbitR * sin((float)t);
-   t+=5;
-   if(t>= 2* Math.PI){
-     t-= 2*Math.PI;
-   }
+   if( xCor >= xCenter + scaledOrbitR){
+    changeX = -1;
+    q = 0;
+  } else if(xCor <= xCenter-scaledOrbitR){
+    changeX = 1;
+    q = 1;
   }
-  */
+  xCor += changeX; 
+  
+  if( q == 1){
+    yCor = yCenter + sqrt(sq(scaledOrbitR) - sq(xCor-xCenter)); 
+  } else if( q == 0){
+    yCor = yCenter - sqrt(sq(scaledOrbitR) - sq(xCor-xCenter)); 
+  }
+  }
+ 
  
 }
