@@ -127,16 +127,30 @@ void draw() {
     delay(300);
   }
   if (planetPressed){
-    fill(planetColor);
-    ellipse(mouseX, mouseY, 33, 33);
+    // fill(planetColor);
+    // ellipse(mouseX, mouseY, 33, 33);
     planetPressed = false;
+    // delay(1000);
     if(mousePressed){
-      int addX = mouseX;
-      int addY = mouseY;
-      Planet p = new Planet(addX, addY);
-      planets.add(p);
-      lastAdded.add(p);
+        int addX = mouseX;
+        int addY = mouseY;
+        Planet p = new Planet(addX, addY);
+        planets.add(p);
+        lastAdded.add(p);
+        newPlanet = false;
+      
+     // boolean newPlanet = true;
     }
+    /*
+    if(mousePressed && newPlanet){
+        int addX = mouseX;
+        int addY = mouseY;
+        Planet p = new Planet(addX, addY);
+        planets.add(p);
+        lastAdded.add(p);
+        newPlanet = false;
+      }
+      */
     delay(300);
   }
   if (starPressed){
