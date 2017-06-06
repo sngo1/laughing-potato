@@ -9,13 +9,15 @@ class Planet {
   float yCenter = 300;
   color c;
   
-  Planet(){
+  Planet(int x, int y){
   
 
     scaledOrbitR = getOrbitRad();
  //   scaledSpeed = speed / (Math.pow(10, 3));
 //    scaledOrbitR = orbitRad / Math.pow(10, 6);
-    getCoordinates();
+    //getCoordinates();
+    xCor = x;
+    yCor = y;
     float r = random(256);
     float g = random(256);
     float b = random(256);
@@ -25,9 +27,9 @@ class Planet {
  
   
   void draw(){
-    ellipse ( (float) xCor, (float) yCor, (float) ( 2 * scaledR ), (float)( 2 * scaledR ) );
+    ellipse ( (float) xCor, (float) yCor, (float) ( 2 * planetRadius ), (float)( 2 * planetRadius ) );
     fill(c);
-    this.orbit();
+    //this.orbit();
 
   }
   
@@ -38,6 +40,7 @@ class Planet {
  /* boolean Crash(){
   } Figure this out later*/
   
+  /*
   double getSpeed(){
     double s = Math.sqrt(6.67408*Math.pow(10, -11) * mass / orbitRad);  //Gets speed based on mass & distance from star, constant bc circular orbit
     return s;
@@ -49,18 +52,21 @@ class Planet {
    // double m = Math.random() * 1.897 * Math.pow(10, 27) + 3.301 * Math.pow(10, 23); //Random mass between mercury's and Jupiter's
     //return m; 
     return 6 * Math.pow(10, 24);
-}
+  }
+ */
   
+  /*
   void getCoordinates(){ //Sets coordinates to cordinates of mouse
     xCor = 500+scaledOrbitR;        //Should be called when mouse holding planet clicks
     yCor = 300;
   }
-
+  */
   
   double getOrbitRad(){
     double r = this.keyPressed() * Math.pow(10, 8);//Assumes center is 0,0
     return r;
   }
+  
   
   int keyPressed(){
  /*   String str = "";
@@ -78,6 +84,7 @@ class Planet {
   
   }
   
+  /*
   void orbit(){
    double x = scaledOrbitR * cos((float)t); 
    double y = scaledOrbitR * sin((float)t);
@@ -86,5 +93,6 @@ class Planet {
      t-= 2*Math.PI;
    }
   }
+  */
  
 }

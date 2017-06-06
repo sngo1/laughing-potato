@@ -88,10 +88,6 @@ void draw() {
   
   if (planetOver) {
     fill(planetHighlight);
-    if(mousePressed){
-      Planet p = new Planet();
-      planets.add(p);
-    }
   } else {
     fill(planetColor);
   }
@@ -134,8 +130,12 @@ void draw() {
     fill(planetColor);
     ellipse(mouseX, mouseY, 33, 33);
     planetPressed = false;
-    Planet p = new Planet();
-    planets.add(p);
+    if(mousePressed){
+      int addX = mouseX;
+      int addY = mouseY;
+      Planet p = new Planet(addX, addY);
+      planets.add(p);
+    }
     delay(300);
   }
   if (starPressed){
