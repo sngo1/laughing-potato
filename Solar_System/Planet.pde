@@ -91,6 +91,7 @@ class Planet {
    t+=5;
    if(t>= 2* Math.PI){
      t-= 2*Math.PI;
+   }
   }
  
 }

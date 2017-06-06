@@ -1,4 +1,3 @@
-
 //Separate arraylists for different objects
 //ArrayList<Asteroid> asteroids; //Contains all asteroids
 ArrayList<Planet> planets; //Contains planets
