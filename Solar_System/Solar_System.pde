@@ -5,6 +5,8 @@ ArrayList<Star> stars;//Contains stars - arbitrary limit of 5 stars in a system
 int numStars; //Can't be greater than 5
 Button test;
 
+ArrayList lastAdded;
+
 //ArrayList<Asteroid> availableAsteroids = new ArrayList();
 //ArrayList<Planet> availablePlanets = new ArrayList();
 
@@ -18,6 +20,7 @@ void setup(){
 //  planets = new ArrayList();
   stars = new ArrayList(); 
   planets = new ArrayList();
+  lastAdded = new ArrayList();
   numStars = 0;
 }
 
