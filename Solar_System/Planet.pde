@@ -1,27 +1,20 @@
 class Planet {
   
-  double radius;
-  double scaledR;
-  double speed;
-  double scaledSpeed;
-  double mass;
+  double planetRadius = 16;
+  // double speed;
   double xCor;
   double yCor;
-  double orbitRad;
   double scaledOrbitR;
-  double t = 0;
-  
+  float xCenter = 500;
+  float yCenter = 300;
   color c;
   
   Planet(){
   
-    radius = random(500);
-    mass = getMass();
-    orbitRad = getOrbitRad();
-    speed = getSpeed();
-    scaledR = 16;
-    scaledSpeed = speed / (Math.pow(10, 3));
-    scaledOrbitR = orbitRad / Math.pow(10, 6);
+
+    scaledOrbitR = getOrbitRad();
+ //   scaledSpeed = speed / (Math.pow(10, 3));
+//    scaledOrbitR = orbitRad / Math.pow(10, 6);
     getCoordinates();
     float r = random(256);
     float g = random(256);
