@@ -134,7 +134,7 @@ void draw() {
       int addX = mouseX;
       int addY = mouseY;
       Planet p = new Planet(addX, addY);
-      planets.add(p);
+ //     planets.add(p);
       lastAdded.add(p);
     }
     delay(300);
@@ -145,7 +145,7 @@ void draw() {
     if(mousePressed){
        Star q = new Star();
        q.add();
-       stars.add(q);
+//       stars.add(q);
        lastAdded.add(q);
        delay(300);
     }
