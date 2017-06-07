@@ -8,10 +8,10 @@ class Asteroid implements CelestialObject {
 
   color c;
 
-  void Asteroid(float firstX, float firstY, float secondX, float secondY) {
-     xCor = firstX;
+  Asteroid(int firstX, int firstY, int secondX, int secondY) {
+    xCor = firstX;
     yCor = firstY;
-     xSpeed = secondX - firstX;
+    xSpeed = secondX - firstX;
     ySpeed = secondY - firstY;
     float r = random(256);
     float g = random(256);
@@ -43,9 +43,5 @@ class Asteroid implements CelestialObject {
     ellipse (  xCor, yCor, (float) ( 2 * radius ), (float) ( 2 * radius ) );
   }*/
 
-  // Accessor Methods --------------------------------------------
-  boolean Crash() {
-    return false; //so it can compile
-  }
   
-   }
+}
