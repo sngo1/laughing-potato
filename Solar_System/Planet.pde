@@ -35,7 +35,6 @@ class Planet implements CelestialObject {
   }
   
   void crash(){
-   
   }
   
   boolean Orbit(){

@@ -26,7 +26,6 @@ class Star implements CelestialObject{
   void add(){
     xCor = getXCor();
     yCor = getYCor();
-       
   }
   
   void draw(){

@@ -10,7 +10,10 @@ void setup(){
   test = new Button();
   test.setup();
   lastAdded = new ArrayList();
-  numStars = 0;
+  
+    
+  Star sun = new Star(300, 300);
+  lastAdded.add(sun);
 }
 
 void draw(){

@@ -47,13 +47,13 @@ void setup() {
   randHighlight = color(209);
   baseColor = color(0);
   currentColor = baseColor;
-  asterX = width/2-asterSize-300;
+  asterX = width/2-asterSize-100;
   asterY = height/2-asterSize/2+300;
-  planetX = width/2-planetSize-225;
+  planetX = width/2-planetSize-25;
   planetY = height/2-planetSize/2+300;
-  starX = width/2-starSize-150;
+  starX = width/2-starSize+50;
   starY = height/2-starSize/2+300;
-  randX = width/2+randSize/2-475;
+  randX = width/2+randSize/2-275;
   randY = height/2+300;
   clearX = starX + 100;
   clearY = starY;
@@ -65,9 +65,7 @@ void setup() {
   footerX = 0;
   footerY = height-footerHeight;
   //--------------------------
-  
-  Star sun = new Star(300, 300);
-  lastAdded.add(sun);
+
 }
 
 void draw() {

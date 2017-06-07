@@ -42,6 +42,5 @@ class Asteroid implements CelestialObject {
     fill(c);
     ellipse (  xCor, yCor, (float) ( 2 * radius ), (float) ( 2 * radius ) );
   }*/
-
   
 }
