@@ -1,6 +1,6 @@
 # DSi
 # Solar System
-  Welcome to your very own solar system! This is a solar system simulation, where you will be able to add and remove asteroids, planets, and stars. Watch your planets crash into one another and move according to the laws of physics(to the best of our ability)! When you are finished, you can view your stats. We hope you enjoy a peek into an alternate universe...
+  Welcome to your very own solar system! This is a solar system simulation, where you will be able to add and remove asteroids, planets, and stars.  We hope you enjoy a peek into an alternate universe...
 
 
 # Instructions:
