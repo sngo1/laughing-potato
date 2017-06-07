@@ -1,4 +1,4 @@
-class Planet {
+class Planet implements CelestialObject {
   
   float planetRadius = 16;
   // double speed;
@@ -17,6 +17,7 @@ class Planet {
     yCor = y;
     scaledOrbitR = getOrbitRad();
 
+
     float r = random(256);
     float g = random(256);
     float b = random(256);
@@ -33,12 +34,16 @@ class Planet {
 
   }
   
+  void crash(){
+  }
+  
   boolean Orbit(){
     return true;
   }
   
- /* boolean Crash(){
-  } Figure this out later*/
+  int objectType(){
+    return 1;
+  }
   
   float getOrbitRad(){
     float r = sqrt( sq(xCor - xCenter) + sq(yCor - yCenter)); 

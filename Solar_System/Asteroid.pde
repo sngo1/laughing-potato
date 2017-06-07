@@ -1,97 +1,46 @@
-class Asteroid {
+class Asteroid implements CelestialObject {
 
-  double radius;
-  double speed;
-  double mass;
-  double xCor;
-  double yCor;
-  double distFromStar;
-
-  int focusOneX; //Should be center
-  int focusOneY; //Should be center
-  int focusTwoX;
-  int focusTwoY;
-
-  double focalDist;
-  double eccentricity;
+  float radius = 10;
+  float xCor;
+  float yCor;
+  float xSpeed;
+  float ySpeed;
 
   color c;
 
-  //  double semiMajor;
-  //  double semiMinor;
-
-  void Asteroid() {
-
-    radius = random(500);
-    eccentricity = Math.random() * 0.7;
-
+  Asteroid(int firstX, int firstY, int secondX, int secondY) {
+    xCor = firstX;
+    yCor = firstY;
+    xSpeed = secondX - firstX;
+    ySpeed = secondY - firstY;
     float r = random(256);
     float g = random(256);
     float b = random(256);
     c = color( r, g, b );
-    
-    //   semiMajor = getSemiMajor();
-    //   SemiMinor = getSemiMinor();
-    /*    speed = getSpeed();
-     //mass = getMass();
-     //    xCor = getXCor();
-     yCor = getYCor();
-     //    orbitRad = getOrbitRad();
-     
-     focusOneX = getFocusOneX();
-     //    focusOneY = getFocusOneY();
-     focusTwoX = getFocusTwoX();
-     //    focusTwoY = getFocusTwoY();*/
   }
 
-  void display() {
-    fill(c);
-    ellipse ( (float) xCor, (float) yCor, (float) ( 2 * radius ), (float) ( 2 * radius ) );
-  }
-
-  // Accessor Methods --------------------------------------------
-  double getSpeed() {
-    return speed;
-  }
-
-  double getMass() {
-    return mass;
-  }
-
-  double getXcor() {
-    return xCor;
-  }
-
-  double getYCor() {
-    return yCor;
-  }
-
-  int getFocusOneX() {
-    return focusOneX;
-  }
-
-  int getFocusOneY() {
-    return focusOneY;
-  }
-
-  int getFocusTwoX() {
-    return focusTwoX;
-  }
-
-  // -------------------------------------------------------------
-
-  boolean Crash() {
-    return false; //so it can compile
+  void draw(){
+   ellipse (xCor, yCor, 2*radius, 2*radius);
+   fill(c);
+   this.move();
   }
   
-  void add() {
+  void crash(){
+   //Not sure what this should do 
   }
-
-  /*
-   double getSemiMajor(){
-   }
-   
-   double getSemiMinor(){
-   }
-   */
+  
+  int objectType(){
+    return 2;
+  }
+  
+  void move(){
+   xCor += xSpeed / 60;
+   yCor += ySpeed / 60;
+  }
+  
+/*  void display() {
+    fill(c);
+    ellipse (  xCor, yCor, (float) ( 2 * radius ), (float) ( 2 * radius ) );
+  }*/
+  
 }

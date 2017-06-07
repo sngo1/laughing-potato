@@ -24,6 +24,7 @@ void draw(){
 
 }
 
+<<<<<<< HEAD
 void clear(){
   planets = new ArrayList();
   stars = new ArrayList();
@@ -62,4 +63,4 @@ void removeLast(){
  lastAdded.remove( lastAdded.size() -1); 
   }
 }
-
+>>>>>>> a939cb4b1e37f3df13773507ad67c46fc4f9ac68

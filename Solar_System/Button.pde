@@ -5,31 +5,32 @@ int asterX, asterY;    // Position of ASTEROID button
 int planetX, planetY;  // Position of PLANET button
 int starX, starY;      // Position of STAR button
 int randX, randY;      // Position of RANDADD button
-int clearX, clearY;
+int undoX, undoY;
 int asterSize = 60;    // Diameter of ASTEROID button
 int planetSize = 60;   // Diameter of PLANET
 int starSize = 60;     // Diameter of STAR button
 int randSize = 63;     // Diameter of RANDADD button
-int clearSize = 60;
+int undoSize = 60;
 color asterColor, planetColor, starColor, randColor, baseColor;
 color asterHighlight, planetHighlight, starHighlight, randHighlight;
 color currentColor;
-color clearColor;
+color undoColor;
 boolean asterOver = false;
 boolean planetOver = false;
 boolean starOver = false;
 boolean randOver = false;
+boolean undoOver = false;
 boolean asterPressed = false;
 boolean planetPressed = false;
 boolean starPressed = false;
 boolean randPressed = false;
-boolean clearPressed = false;
+boolean undoPressed = false;
 //----------------------------------------------------------------------
 
 //FOOTER SETUP----------------------------------------------------------
 int footerX, footerY;
 int footerHeight = 100;
-int footerWidth = 1000;
+int footerWidth = 600;
 color footerColor;
 //----------------------------------------------------------------------
 
@@ -47,17 +48,17 @@ void setup() {
   randHighlight = color(209);
   baseColor = color(0);
   currentColor = baseColor;
-  asterX = width/2-asterSize-300;
+  asterX = width/2-asterSize-100;
   asterY = height/2-asterSize/2+300;
-  planetX = width/2-planetSize-225;
+  planetX = width/2-planetSize-25;
   planetY = height/2-planetSize/2+300;
-  starX = width/2-starSize-150;
+  starX = width/2-starSize+50;
   starY = height/2-starSize/2+300;
-  randX = width/2+randSize/2-475;
+  randX = width/2+randSize/2-275;
   randY = height/2+300;
-  clearX = starX + 100;
-  clearY = starY;
-  clearColor = color(0);
+  undoColor = color(0);
+  undoX = 400;
+  undoY = height/2+270;
   //--------------------------
   
   //FOOTER--------------------
@@ -66,6 +67,7 @@ void setup() {
   footerY = height-footerHeight;
   //--------------------------
 }
+
 
 void draw() {
   update(mouseX, mouseY);
@@ -112,24 +114,76 @@ void draw() {
   stroke(0);
   ellipse(randX, randY, randSize, randSize);
   text("RANDOM", randX-randSize/2+7, randY-randSize/2-1);
+  
+  stroke(255);
+  rect(undoX, undoY, starSize, starSize);
+  text("undo", undoX, undoY);
+  fill(undoColor);
   //--------------------------
   
   if (randPressed){
     fill(randColor);
     ellipse(mouseX, mouseY, 33, 33);
     randPressed = false;
+    int choice = (int)random(3);
+    if (choice == 0){
+      fill(asterColor);
+      ellipse(mouseX, mouseY, 33, 33);
+      asterPressed = false;
+      if(mousePressed && inSystem(mouseX, mouseY)){
+        int addX = mouseX;
+        int addY = mouseY;
+        Asteroid a = new Asteroid(addX, addY, 300, 300);
+ //       asteroid.add(p);
+        lastAdded.add(a);
+      }
+    } else if (choice == 1){
+      fill(planetColor);
+      ellipse(mouseX, mouseY, 33, 33);
+      planetPressed = false;
+      if(mousePressed && inSystem(mouseX, mouseY)){
+        int addX = mouseX;
+        int addY = mouseY;
+        Planet p = new Planet(addX, addY);
+ //       planets.add(p);
+        lastAdded.add(p);
+      }
+    } else if (choice == 2) {
+      fill(starColor);
+      ellipse(mouseX, mouseY, 33, 33);
+      if(mousePressed && inSystem(mouseX, mouseY)){
+        int addX = mouseX;
+        int addY = mouseY;
+         Star q = new Star(addX, addY);
+         q.add();
+//         stars.add(q);
+         lastAdded.add(q);
+         delay(300);
+      }
+      starPressed = false;
+    }
     delay(300);
   }
   if (asterPressed){
     fill(asterColor);
     ellipse(mouseX, mouseY, 33, 33);
     asterPressed = false;
+    if(mousePressed && inSystem(mouseX, mouseY)){
+      int addX = mouseX;
+      int addY = mouseY;
+      int dirX = 300;
+      int dirY = 300;
+      Asteroid a = new Asteroid(addX, addY, dirX, dirY);
+ //     asteroid.add(p);
+      lastAdded.add(a);
+    }
     delay(300);
   }
   if (planetPressed){
     // fill(planetColor);
     // ellipse(mouseX, mouseY, 33, 33);
     planetPressed = false;
+<<<<<<< HEAD
     // delay(1000);
     if(mousePressed){
         int addX = mouseX;
@@ -140,6 +194,14 @@ void draw() {
         newPlanet = false;
       
      // boolean newPlanet = true;
+=======
+    if(mousePressed && inSystem(mouseX, mouseY)){
+      int addX = mouseX;
+      int addY = mouseY;
+      Planet p = new Planet(addX, addY);
+ //     planets.add(p);
+      lastAdded.add(p);
+>>>>>>> a939cb4b1e37f3df13773507ad67c46fc4f9ac68
     }
     /*
     if(mousePressed && newPlanet){
@@ -156,14 +218,21 @@ void draw() {
   if (starPressed){
     fill(starColor);
     ellipse(mouseX, mouseY, 33, 33);
-    if(mousePressed){
-       Star q = new Star();
+    if(mousePressed && inSystem(mouseX, mouseY)){
+      int addX = mouseX;
+      int addY = mouseY;
+       Star q = new Star(addX, addY);
        q.add();
-       stars.add(q);
+//       stars.add(q);
        lastAdded.add(q);
        delay(300);
     }
       starPressed = false;
+  }
+  if(undoPressed){
+   removeLast(); 
+   delay(300);
+   undoPressed = false;
   }
 }
 
@@ -188,7 +257,13 @@ void update(int x, int y) {
     asterOver = false;
     planetOver = false;
     randOver = false;
-  } else {
+  } 
+  else if(overUndo()){
+    undoOver = true;
+    if(mousePressed){
+     undoPressed = true; 
+    }
+  }else {
     randOver = asterOver = planetOver = starOver = false;
   }
   
@@ -204,21 +279,6 @@ void update(int x, int y) {
 
 }
 
-void mousePressed() {
-  if (randOver) {
-    currentColor = randColor;
-  }
-  if (asterOver) {
-    currentColor = asterColor;
-  }
-  if (planetOver) {
-    currentColor = planetColor;
-  }
-  if (starOver) {
-    currentColor = starColor;
-  }
-}
-
 boolean overAster(int x, int y, int width, int height)  {
   if (mouseX >= x && mouseX <= x+width && 
       mouseY >= y && mouseY <= y+height) {
@@ -226,6 +286,15 @@ boolean overAster(int x, int y, int width, int height)  {
   } else {
     return false;
   }
+}
+
+boolean overUndo(){
+ if(mouseX < undoX+starSize && mouseX > undoX-starSize && mouseY > undoY - starSize && mouseY < undoY +starSize){
+   return true;
+ }
+ else{
+   return false;
+ }
 }
 
 boolean overPlanet(int x, int y, int width, int height)  {
@@ -255,4 +324,15 @@ boolean overRand(int x, int y, int diameter) {
     return false;
   }
 }
+
+
+boolean inSystem(int x, int y) {
+  if (mouseX >= x && mouseX <= x+600 && 
+      mouseY >= y && mouseY <= y+600) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 }

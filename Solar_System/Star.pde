@@ -1,4 +1,4 @@
-class Star {
+class Star implements CelestialObject{
   
   double radius;
   double scaledRadius;
@@ -11,11 +11,10 @@ class Star {
   
   color c;
   
-  Star(){
-  
-    radius = 695700; //Radius of sun
+  Star(int x, int y){
+    xCor = 300;
+    yCor = 300;
     scaledRadius = 25;//NOT ACTUALLY TO SCALE
-    mass = (Math.random() * Math.pow(10, 31)) + (9.945 * Math.pow(10, 29)); //Random number between 1/2 mass of sun and 10x
     
     float r = random(256);
     float g = random(256);
@@ -25,11 +24,8 @@ class Star {
   }
   
   void add(){
-    speed = getSpeed();
-    //scaledSpeed = ???
-    xCor = getXCor(1);
-    yCor = getYCor(1);
-       
+    xCor = getXCor();
+    yCor = getYCor();
   }
   
   void draw(){
@@ -41,15 +37,15 @@ class Star {
     return true;
   }
   
-  double getSpeed(){
-     return 0;
+  double getXCor(){
+    return xCor;
   }
   
-  double getXCor(int numStars){
-    return 500;
+  double getYCor(){
+    return yCor;
   }
   
-  double getYCor(int numStars){
-    return 300;
+  int objectType(){
+   return 0; 
   }
 }
