@@ -208,6 +208,7 @@ void draw() {
   }
   if(undoPressed){
    removeLast(); 
+   delay(300);
    undoPressed = false;
   }
 }
