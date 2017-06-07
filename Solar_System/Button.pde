@@ -5,25 +5,26 @@ int asterX, asterY;    // Position of ASTEROID button
 int planetX, planetY;  // Position of PLANET button
 int starX, starY;      // Position of STAR button
 int randX, randY;      // Position of RANDADD button
-int clearX, clearY;
+int undoX, undoY;
 int asterSize = 60;    // Diameter of ASTEROID button
 int planetSize = 60;   // Diameter of PLANET
 int starSize = 60;     // Diameter of STAR button
 int randSize = 63;     // Diameter of RANDADD button
-int clearSize = 60;
+int undoSize = 60;
 color asterColor, planetColor, starColor, randColor, baseColor;
 color asterHighlight, planetHighlight, starHighlight, randHighlight;
 color currentColor;
-color clearColor;
+color undoColor;
 boolean asterOver = false;
 boolean planetOver = false;
 boolean starOver = false;
 boolean randOver = false;
+boolean undoOver = false;
 boolean asterPressed = false;
 boolean planetPressed = false;
 boolean starPressed = false;
 boolean randPressed = false;
-boolean clearPressed = false;
+boolean undoPressed = false;
 //----------------------------------------------------------------------
 
 //FOOTER SETUP----------------------------------------------------------
@@ -55,9 +56,9 @@ void setup() {
   starY = height/2-starSize/2+300;
   randX = width/2+randSize/2-275;
   randY = height/2+300;
-  clearX = starX + 100;
-  clearY = starY;
-  clearColor = color(0);
+  undoColor = color(0);
+  undoX = 400;
+  undoY = height/2+270;
   //--------------------------
   
   //FOOTER--------------------
@@ -65,8 +66,8 @@ void setup() {
   footerX = 0;
   footerY = height-footerHeight;
   //--------------------------
-
 }
+
 
 void draw() {
   update(mouseX, mouseY);
@@ -113,6 +114,11 @@ void draw() {
   stroke(0);
   ellipse(randX, randY, randSize, randSize);
   text("RANDOM", randX-randSize/2+7, randY-randSize/2-1);
+  
+  stroke(255);
+  rect(undoX, undoY, starSize, starSize);
+  text("undo", undoX, undoY);
+  fill(undoColor);
   //--------------------------
   
   if (randPressed){
@@ -200,6 +206,10 @@ void draw() {
     }
       starPressed = false;
   }
+  if(undoPressed){
+   removeLast(); 
+   undoPressed = false;
+  }
 }
 
 void update(int x, int y) {
@@ -223,7 +233,13 @@ void update(int x, int y) {
     asterOver = false;
     planetOver = false;
     randOver = false;
-  } else {
+  } 
+  else if(overUndo()){
+    undoOver = true;
+    if(mousePressed){
+     undoPressed = true; 
+    }
+  }else {
     randOver = asterOver = planetOver = starOver = false;
   }
   
@@ -246,6 +262,15 @@ boolean overAster(int x, int y, int width, int height)  {
   } else {
     return false;
   }
+}
+
+boolean overUndo(){
+ if(mouseX < undoX+starSize && mouseX > undoX-starSize && mouseY > undoY - starSize && mouseY < undoY +starSize){
+   return true;
+ }
+ else{
+   return false;
+ }
 }
 
 boolean overPlanet(int x, int y, int width, int height)  {
@@ -275,6 +300,7 @@ boolean overRand(int x, int y, int diameter) {
     return false;
   }
 }
+
 
 boolean inSystem(int x, int y) {
   if (mouseX >= x && mouseX <= x+600 && 

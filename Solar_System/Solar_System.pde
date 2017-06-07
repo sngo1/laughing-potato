@@ -24,10 +24,10 @@ void draw(){
 
 }
 
-void clear(){
-  lastAdded = new ArrayList();
-}
+
 
 void removeLast(){
+  if(lastAdded.size() >0){
  lastAdded.remove( lastAdded.size() -1); 
+  }
 }
