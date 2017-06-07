@@ -12,8 +12,8 @@ class Star implements CelestialObject{
   color c;
   
   Star(int x, int y){
-    xCor = x;
-    yCor = y;
+    xCor = 300;
+    yCor = 300;
     scaledRadius = 25;//NOT ACTUALLY TO SCALE
     
     float r = random(256);
