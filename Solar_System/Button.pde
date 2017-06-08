@@ -183,25 +183,12 @@ void draw() {
     // fill(planetColor);
     // ellipse(mouseX, mouseY, 33, 33);
     planetPressed = false;
-<<<<<<< HEAD
-    // delay(1000);
-    if(mousePressed){
-        int addX = mouseX;
-        int addY = mouseY;
-        Planet p = new Planet(addX, addY);
-        planets.add(p);
-        lastAdded.add(p);
-        newPlanet = false;
-      
-     // boolean newPlanet = true;
-=======
     if(mousePressed && inSystem(mouseX, mouseY)){
       int addX = mouseX;
       int addY = mouseY;
       Planet p = new Planet(addX, addY);
  //     planets.add(p);
       lastAdded.add(p);
->>>>>>> a939cb4b1e37f3df13773507ad67c46fc4f9ac68
     }
     /*
     if(mousePressed && newPlanet){

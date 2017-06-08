@@ -25,8 +25,8 @@ void draw(){
 }
 
 void clear(){
-  planets = new ArrayList();
-  stars = new ArrayList();
+  // planets = new ArrayList();
+  // stars = new ArrayList();
 }
 
 // Setups the toolbar and buttons
@@ -54,12 +54,9 @@ boolean planetPressed = false;
 boolean starPressed = false;
 boolean randPressed = false;
 boolean clearPressed = false;
-=======
-
 
 void removeLast(){
   if(lastAdded.size() >0){
  lastAdded.remove( lastAdded.size() -1); 
   }
 }
-
